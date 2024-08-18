@@ -6,7 +6,7 @@ import Header from './components/Header'
 import MainContent from './components/MainContent'
 import Footer from './components/Footer'
 import './App.css'
-import UserProfile from './UserProfile'
+import UserProfile from './components/UserProfile'
 import Counter from './components/Counter'
 import ProfilePage from './ProfilePage';
 import UserContext from './components/UserContext'
