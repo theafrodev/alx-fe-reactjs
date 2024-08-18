@@ -9,7 +9,7 @@ import './App.css'
 import UserProfile from './UserProfile'
 import Counter from './components/Counter'
 import ProfilePage from './ProfilePage';
-import UserContext from './UserContext'
+import UserContext from './components/UserContext'
 
 // function App() {
 //   const [count, setCount] = useState(0)
