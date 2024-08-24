@@ -6,7 +6,7 @@ import AddRecipeForm from './components/AddRecipeForm'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
 
   return (
     <>
