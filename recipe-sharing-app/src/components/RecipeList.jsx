@@ -5,8 +5,12 @@ import AddRecipeForm from './AddRecipeForm';
 import SearchBar from './SearchBar';
 
 const RecipeList = () => {
-  // Fetch filtered recipes instead of all recipes
   const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
+  const addFavorite = useRecipeStore(state => state.addFavorite);
+  const removeFavorite = useRecipeStore(state => state.removeFavorite);
+  const favorites = useRecipeStore(state => state.favorites);
+
+  const isFavorite = (id) => favorites.includes(id);
 
   return (
     <div>
@@ -19,6 +23,13 @@ const RecipeList = () => {
               <Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link>
             </h3>
             <p>{recipe.description}</p>
+            <button
+              onClick={() => 
+                isFavorite(recipe.id) ? removeFavorite(recipe.id) : addFavorite(recipe.id)
+              }
+            >
+              {isFavorite(recipe.id) ? 'Remove from Favorites' : 'Add to Favorites'}
+            </button>
           </div>
         ))
       ) : (
@@ -32,26 +43,3 @@ const RecipeList = () => {
 };
 
 export default RecipeList;
-
-
-// RecipeList component
-// import { useRecipeStore } from './recipeStore';
-
-// const RecipeList = () => {
-//   const recipes = useRecipeStore(state => state.recipes);
-
-//   return (
-//     <div>
-//       <h1>Recipe List</h1>
-//       {recipes.map(recipe => (
-//         <div key={recipe.id}>
-//           <h3>{recipe.title}</h3>
-//           <p>{recipe.id}</p>
-//           <p>{recipe.description}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default RecipeList;
