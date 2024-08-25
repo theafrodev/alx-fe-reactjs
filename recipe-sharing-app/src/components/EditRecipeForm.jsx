@@ -25,8 +25,8 @@ const EditRecipeForm = () => {
   }, [recipe]);
 
   // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     if (recipe) {
       // Update the recipe with new details
