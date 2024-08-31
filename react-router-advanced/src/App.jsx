@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<HomeContent />} />
             <Route path="/profile/*" element={<ProtectedRoute element={<ProfileRoutes />} />}/>
             <Route path="/user/:userId" element={<UserProfile/>} />
-            <Route path="/blog/:blogId" element={<BlogPost/>} />
+            <Route path="/blog/:id" element={<BlogPost/>} />
           </Routes>
         </div>
       </Router>
