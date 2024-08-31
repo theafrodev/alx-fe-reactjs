@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<HomeContent />} />
             <Route path="/profile/*" element={<ProtectedRoute element={<ProfileRoutes />} />}/>
             <Route path="/user/:userId" element={<UserProfile/>} />
-            <Route path="/post/:postId" element={<BlogPost/>} />
+            <Route path="/blog/:blogId" element={<BlogPost/>} />
           </Routes>
         </div>
       </Router>
@@ -42,7 +42,7 @@ const Navigation = () => {
           <Link to="/user/1">User 1 Profile</Link>
         </li>
         <li>
-          <Link to="/post/42">Blog Post 42</Link>
+          <Link to="/blog/42">Blog Post 42</Link>
         </li>
       </ul>
       <button onClick={isAuthenticated ? logout : login}>
