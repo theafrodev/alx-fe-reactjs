@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1725225986599" clover="3.2.0">
+  <project timestamp="1725225986599" name="All files">
+    <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4" elements="15" coveredelements="15" complexity="0" loc="5" ncloc="5" packages="1" files="1" classes="1"/>
+    <file name="TodoList.jsx" path="/Users/teleplay/Documents/ALX/alx-fe-reactjs/react-todo/src/components/TodoList.jsx">
+      <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="21" count="6" type="stmt"/>
+      <line num="24" count="23" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
