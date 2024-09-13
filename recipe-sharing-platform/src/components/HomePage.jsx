@@ -19,10 +19,12 @@ function HomePage() {
     <div>Loading Recipes...</div>
   }else{
     recipes.map((recipe) => recipeArray.push(
-      <div className='border' key={recipe.id}>
-        <img className='w-full' src={recipe.image}/>
-        <h3>{recipe.title}</h3>
-        <p>{recipe.summary}</p>
+      <div className='border rounded p-4 transition ease-in-out shadow-md hover:shadow-xl hover:scale-105' key={recipe.id}>
+        <img className='w-full rounded' src={recipe.image}/>
+        <div className='py-4'>
+          <h3 className='font-bold pb-2 text-left text-xl'>{recipe.title}</h3>
+          <p className='text-left'>{recipe.summary}</p>
+        </div>
       </div>
     ));
   }
