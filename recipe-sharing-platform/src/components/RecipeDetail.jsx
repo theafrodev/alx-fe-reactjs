@@ -41,6 +41,11 @@ export default function RecipeDetail() {
           <span>Ingredients</span>
           <span>{recipe.ingredients.map((ingredient, key=0 )=> <li key={key++}>{ingredient}</li>)}</span>
         </p>
+
+        <p>
+          <span>Instructions<br/></span>
+          <span>{recipe.instructions.map((step, key=0 )=> <span key={key++}>{step}<br/></span>)}</span>
+        </p>
       </section>
     </div>
   )
