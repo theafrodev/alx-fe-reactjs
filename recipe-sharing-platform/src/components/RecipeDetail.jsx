@@ -32,21 +32,25 @@ export default function RecipeDetail() {
   }else {
 
   return (
-    <div>
-      <img src={recipe.image} alt="image of current recipe" />
-      <h2>{recipe.title}</h2>
-      <h5>{recipe.summary}</h5>
-      <section>
-        <p>
-          <span>Ingredients</span>
-          <span>{recipe.ingredients.map((ingredient, key=0 )=> <li key={key++}>{ingredient}</li>)}</span>
-        </p>
+    <div className='container grid grid-cols-1 sm:grid-cols-2 gap-10 mx-auto'>
+      <img className='w-full shadow-md rounded-xl shadow-red-200' src={recipe.image} alt="image of current recipe" />
+      <div className='text-left'>
+        <h2 className='font-bold text-5xl pb-8'>{recipe.title}</h2>
+        <h5 className='pb-4 text-red-800 italic'>{recipe.summary}</h5>
+        <section>
+          <p className='py-4'>
+            <span className='font-bold mb-2 block text-lg'>Ingredients</span>
+            <span>{recipe.ingredients.map((ingredient, key=0 )=> <li key={key++}>{ingredient}</li>)}</span>
+          </p>
 
-        <p>
-          <span>Instructions<br/></span>
-          <span>{recipe.instructions.map((step, key=0 )=> <span key={key++}>{step}<br/></span>)}</span>
-        </p>
-      </section>
+          <p className='py-4'>
+            <span className='font-bold mb-2 block text-lg'>Instructions<br/></span>
+            <span>{recipe.instructions.map((step, key=0 )=> <span className='border-l-4 block border-l-red-300 mb-6 pl-4' key={key++}>{step}<br/></span>)}</span>
+          </p>
+
+          <p>Enjoy your {recipe.title}</p>
+        </section>
+      </div>
     </div>
   )
 

@@ -16,6 +16,16 @@
       "id": 2,
       "title": "Chicken Tikka Masala",
       "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-      "image": "https://via.placeholder.com/150"
+      "image": "https://via.placeholder.com/150",
+      "ingredients": [
+        "500g boneless chicken (cut into bite-sized pieces)","1/2 cup plain yogurt","2 tbsp lemon juice",
+"1 tsp ground cumin","1 tsp ground coriander","1 tsp garam masala","1 tsp paprika","1 tsp turmeric powder","1 tsp salt",
+"2 tbsp ginger-garlic paste","2 tbsp oil (for grilling/frying)"
+      ],
+      "instructions": [
+        "In a large bowl, combine yogurt, lemon juice, cumin, coriander, garam masala, paprika, turmeric, salt, and ginger-garlic paste.","Add the chicken pieces, toss to coat, cover, and refrigerate for at least 1 hour (or up to overnight for better flavor).",
+"Preheat a grill, oven, or pan to medium-high heat. If using a grill or oven, you can skewer the marinated chicken.","Grill or cook the chicken in batches until cooked through and lightly charred, about 5-7 minutes on each side. The chicken doesn't need to be fully cooked at this point as it will cook further in the sauce. Set aside.",
+"Add the grilled chicken pieces to the masala sauce, stirring to coat the chicken in the sauce.","Pour in the cream or coconut milk, and stir well. Simmer the sauce for another 10-15 minutes until the chicken is fully cooked and the flavors are well combined. Taste and adjust salt if necessary"
+      ]
     }
   ]

@@ -24,9 +24,8 @@ function HomePage() {
         <div className='border rounded p-4 transition ease-in-out shadow-md hover:shadow-xl hover:scale-105'>
           <img className='w-full rounded' src={recipe.image}/>
           <div className='py-4'>
-            <h1>{recipe.id}</h1>
-            <h3 className='font-bold pb-2 text-left text-xl'>{recipe.title}</h3>
-            <p className='text-left'>{recipe.summary}</p>
+            <h3 className='font-bold pb-2 text-left text-xl text-red-500'>{recipe.title}</h3>
+            <p className='text-left text-gray-900'>{recipe.summary}</p>
           </div>
         </div>
       </Link>
