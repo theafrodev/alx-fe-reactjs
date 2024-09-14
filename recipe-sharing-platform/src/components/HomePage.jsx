@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import recipeList from '../data.json'
+import recipeList from '../data.json';
+import { Link } from 'react-router-dom';
 
 
 function HomePage() {
@@ -13,19 +14,22 @@ function HomePage() {
 
   let recipeArray = []
 
-  console.log(recipes)
+  // console.log(recipes)
 
   if(!recipes){
     <div>Loading Recipes...</div>
   }else{
     recipes.map((recipe) => recipeArray.push(
-      <div className='border rounded p-4 transition ease-in-out shadow-md hover:shadow-xl hover:scale-105' key={recipe.id}>
-        <img className='w-full rounded' src={recipe.image}/>
-        <div className='py-4'>
-          <h3 className='font-bold pb-2 text-left text-xl'>{recipe.title}</h3>
-          <p className='text-left'>{recipe.summary}</p>
+      <Link to={`recipe/${recipe.id}`} key={recipe.id}>
+        <div className='border rounded p-4 transition ease-in-out shadow-md hover:shadow-xl hover:scale-105'>
+          <img className='w-full rounded' src={recipe.image}/>
+          <div className='py-4'>
+            <h1>{recipe.id}</h1>
+            <h3 className='font-bold pb-2 text-left text-xl'>{recipe.title}</h3>
+            <p className='text-left'>{recipe.summary}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     ));
   }
 

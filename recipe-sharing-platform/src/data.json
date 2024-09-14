@@ -3,7 +3,14 @@
       "id": 1,
       "title": "Spaghetti Carbonara",
       "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "https://via.placeholder.com/150"
+      "image": "https://via.placeholder.com/150",
+      "ingredients": [ "400g spaghetti", "150g pancetta or guanciale (cut into small cubes)","3 large eggs","1 cup grated Pecorino Romano cheese (or Parmesan)", "Freshly ground black pepper", "Salt (for pasta water)","2 cloves garlic (optional)", "Olive oil (optional)"],
+      "instructions": ["Bring a large pot of salted water to a boil and cook the spaghetti according to package instructions until al dente. Reserve about 1 cup of pasta water before draining.",
+    "In a large skillet, cook the pancetta or guanciale over medium heat until crispy (about 5-7 minutes). You can add a little olive oil if needed, but traditionally no extra oil is used. Optionally, you can sauté garlic in the fat for extra flavor.",
+"While the pancetta is cooking, whisk together the eggs and grated Pecorino Romano (or Parmesan) in a bowl. Season with a generous amount of freshly ground black pepper.",
+"Once the spaghetti is cooked and drained, add it to the skillet with the pancetta, tossing to coat in the rendered fat. Remove the skillet from the heat.",
+"Pour the egg and cheese mixture over the hot pasta, tossing quickly to coat the spaghetti. The heat from the pasta will gently cook the eggs, creating a creamy sauce. If the sauce is too thick, add a little reserved pasta water to loosen it.",
+"Plate the spaghetti carbonara and top with extra Pecorino Romano, more freshly ground black pepper, and a sprinkle of pancetta if desired."]
     },
     {
       "id": 2,
