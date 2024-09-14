@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import recipeList from '../data.json'
 
@@ -6,29 +7,44 @@ export default function RecipeDetail() {
 
   const { id } = useParams();
 
-  console.log(id);
+  const [recipe, setRecipe] = useState(null);
 
-  const currentRecipe = recipeList[id-1];
+  useEffect(()=>{
+    setRecipe(recipeList[id-1]);
+  }, []);
+
+  //console.log(id);
+
+  //const currentRecipe = recipeList[id-1];
 
   //console.log(recipeList[id-1]);
 
-  console.log(currentRecipe);
+  //console.log(currentRecipe);
 
   // const ingredients = currentRecipe.ingredients.map((ingredient) => ingredient);
 
   // console.log(ingredients)
 
+  if(!recipe){
+
+    <div>Loading Recipe...</div>
+
+  }else {
+
   return (
     <div>
-      <img src={currentRecipe.image} alt="image of current recipe" />
-      <h2>{currentRecipe.title}</h2>
-      <h5>{currentRecipe.summary}</h5>
+      <img src={recipe.image} alt="image of current recipe" />
+      <h2>{recipe.title}</h2>
+      <h5>{recipe.summary}</h5>
       <section>
         <p>
           <span>Ingredients</span>
-          <span>{currentRecipe.ingredients.map((ingredient)=> <li>{ingredient}</li>)}</span>
+          <span>{recipe.ingredients.map((ingredient, key=0 )=> <li key={key++}>{ingredient}</li>)}</span>
         </p>
       </section>
     </div>
   )
+
+}
+
 }
