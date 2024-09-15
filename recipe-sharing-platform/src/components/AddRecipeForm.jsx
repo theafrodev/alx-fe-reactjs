@@ -6,7 +6,7 @@ function AddRecipeForm() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [ingredients, setIngredients] = useState('');
-    const [instructions, setInstructions] = useState('');
+    const [steps, setSteps] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -46,9 +46,9 @@ function AddRecipeForm() {
         <textarea 
             name="" 
             id="" 
-            value={instructions} 
+            value={steps} 
             required 
-            onChange={(e)=>setInstructions(e.target.value)} ></textarea>
+            onChange={(e)=>setSteps(e.target.value)} ></textarea>
 
         <button>Add Recipe</button>
       </form>
