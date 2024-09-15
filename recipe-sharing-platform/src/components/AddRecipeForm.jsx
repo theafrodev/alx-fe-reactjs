@@ -63,9 +63,11 @@ function AddRecipeForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="">Recipe Name</label>
+      <form onSubmit={handleSubmit} className='container flex flex-col w-screen max-w-sm bg-slate-300 text-gray-900 text-left shadow-md rounded-xl shadow-red-200 p-8'>
+        <h3 className='text-center font-bold text-3xl pb-6 text-red-800'>Add a new recipe</h3>
+        <label>Recipe Name</label>
         <input 
+            className='bg-transparent border border-gray-700 rounded-md p-2 mb-4'
             type="text" 
             name="" 
             id="" 
@@ -76,6 +78,7 @@ function AddRecipeForm() {
 
         <label htmlFor="">Description</label>
         <textarea 
+            className='bg-transparent border border-gray-700 rounded-md p-2 mb-4'
             name="" 
             id=""
             value={description} 
@@ -86,6 +89,7 @@ function AddRecipeForm() {
 
         <label htmlFor="">Ingredients</label>
         <textarea 
+            className='bg-transparent border border-gray-700 rounded-md p-2 mb-4'
             name="" 
             id=""
             value={ingredients} 
@@ -95,6 +99,7 @@ function AddRecipeForm() {
 
         <label htmlFor="">Instructions</label>
         <textarea 
+            className='bg-transparent border border-gray-700 rounded-md p-2 mb-4'
             name="" 
             id="" 
             value={steps} 
@@ -102,7 +107,7 @@ function AddRecipeForm() {
             onChange={(e)=>setSteps(e.target.value)} ></textarea>
             {errors.instructions && <h6>{errors.instructions}</h6>}
 
-        <button>Add Recipe</button>
+        <button className='bg-red-900 text-white font-bold rounded-md mt-2'>Add Recipe</button>
       </form>
     </div>
   )
