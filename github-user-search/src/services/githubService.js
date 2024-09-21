@@ -1,9 +1,9 @@
-const GITHUB_API_KEY = process.env.REACT_APP_GITHUB_API_KEY;
+const GITHUB_API_KEY = import.meta.env.VITE_GITHUB_API_KEY;
 
-export const fetchGitHubData = async (username) => {
+export const fetchUserData = async (username) => {
   const response = await fetch(`https://api.github.com/users/${username}`, {
     headers: {
-      Authorization: `token ${GITHUB_API_KEY}`,
+      Authorization: `Bearer ${GITHUB_API_KEY}`,
     },
   });
 
