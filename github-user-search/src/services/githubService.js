@@ -29,8 +29,8 @@ export const fetchUserData = async (username) => {
     });
     
     return response.data;
-    
+
   } catch (error) {
-    throw new Error(`Failed to fetch GitHub data: ${error.response?.status || error.message}`);
+    throw new Error(`Failed to fetch GitHub data: ${error.response?.status || error.message}. Please Login`);
   }
 };

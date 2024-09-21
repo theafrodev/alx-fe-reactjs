@@ -79,7 +79,7 @@ function Search() {
           placeholder="Enter GitHub username"
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit">login</button>
       </form>
 
       {loading && <p>Loading...</p>}  
