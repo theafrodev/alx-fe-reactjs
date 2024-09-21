@@ -93,20 +93,20 @@ function Search() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
+      <form className='bg-slate-400 p-4 rounded flex flex-col lg:flex-row gap-2' onSubmit={handleSubmit}>
+        <input className='rounded bg-white px-3 py-2 text-black'
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Enter GitHub username"
         />
-        <input
+        <input className='rounded bg-white px-3 py-2 text-black'
           type="text"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           placeholder="Enter location"
         />
-        <input
+        <input className='rounded bg-white px-3 py-2 text-black'
           type="number"
           value={minRepos}
           onChange={(e) => setMinRepos(e.target.value)}
@@ -123,12 +123,12 @@ function Search() {
       )}
 
       {userData && userData.length > 0 && (
-        <div>
+        <div className>
           <h2>Search Results:</h2>
           {userData.map(user => (
-            <div key={user.id}>
+            <div key={user.id} className='bg-slate-600 p-6 my-6 w-fit mx-auto rounded-lg'>
               <h3>{user.login}</h3>
-              <img src={user.avatar_url} alt={`${user.login}'s avatar`} width={50} />
+              <img className='m-auto' src={user.avatar_url} alt={`${user.login}'s avatar`} width={200} />
               <p>Location: {user.location || 'Not specified'}</p>
               <p>Repositories: {user.public_repos}</p>
               <a href={user.html_url} target="_blank" rel="noopener noreferrer">
