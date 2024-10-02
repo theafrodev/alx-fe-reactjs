@@ -22,7 +22,7 @@ function AmountInput() {
     let dollarAmount = primaryAmount/data.conversion_rates[primaryCurrency];
     console.log(dollarAmount+"USD");
     let converted = dollarAmount*data.conversion_rates[convertedCurrency];
-    setConvertedAmount[converted];//doesn't work
+    setConvertedAmount(converted);
     console.log(convertedCurrency+converted);
     console.log(convertedAmount);
     //console.log("DollarValue="+dollarRate/primaryAmount);
