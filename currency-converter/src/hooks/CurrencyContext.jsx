@@ -9,6 +9,8 @@ export function CurrencyProvider({children}){
     
     const [primaryCurrency, setPrimaryCurrency] = useState('USD');
     const [convertedCurrency, setConvertedCurrency] = useState('GHS');
+    const [primaryAmount, setPrimaryAmount] = useState(1);
+    const [convertedAmount, setConvertedAmount] = useState(1)
 
     //expose variables and methods (states)
     const value = {
@@ -16,6 +18,10 @@ export function CurrencyProvider({children}){
         setPrimaryCurrency,
         convertedCurrency,
         setConvertedCurrency,
+        primaryAmount,
+        setPrimaryAmount,
+        convertedAmount,
+        setConvertedAmount
     };
 
 

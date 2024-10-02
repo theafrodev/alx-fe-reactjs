@@ -40,9 +40,12 @@ function CurrencySelector(props) {
 
         //check for type of currency (props) and assign it to the global variable (context)
         if(props.type === "primary"){
+            //Recheck why the first line is here
             currencies.primaryCurrency = selectedCurrency;
+            currencies.setPrimaryCurrency(selectedCurrency);
         } else{
             currencies.convertedCurrency = selectedCurrency;
+            currencies.setConvertedCurrency(selectedCurrency);
         }
 
         console.log(currencies);
