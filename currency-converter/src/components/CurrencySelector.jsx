@@ -16,11 +16,13 @@ function CurrencySelector(props) {
     },[]);
 
     async function setRateData(){
+        //get data from currency service
        const data = await fetchRates();
 
        if(!data){
         console.log("Ooops something went wrong, Data Unavailable");
        } else if (data.result === "success"){
+            //set conversion rates to fxdata state
             setFxData(data.conversion_rates);
             localStorage.setItem("rates", JSON.stringify(data.conversion_rates));
        } else{
@@ -29,12 +31,14 @@ function CurrencySelector(props) {
     }
 
 
+    //overlay display
     function toggleDialog(){
         setOpen(!open);
     }
 
     function chooseCurrency(selectedCurrency){
 
+        //check for type of currency (props) and assign it to the global variable (context)
         if(props.type === "primary"){
             currencies.primaryCurrency = selectedCurrency;
         } else{
@@ -42,12 +46,15 @@ function CurrencySelector(props) {
         }
 
         console.log(currencies);
+
+        //update the currency (local state) with the value of the global variable (context)
         setCurrency(selectedCurrency);
         setOpen(false);
     }
 
   return (
     <>
+        {/* Conditional rendering for opened and closed overlay state */}
         { open ? 
             <div className='relative z-10' aria-labelledby='modal-title' role='dialog' aria-modal="true">
                 <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
@@ -61,10 +68,8 @@ function CurrencySelector(props) {
                             <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                                 <h3>Select Currency</h3>
 
-                                {/* <button onClick={() => chooseCurrency('EUR')}>EUR</button>
-                                <button onClick={() => chooseCurrency('GHS')}>GHS</button>
-                                <button onClick={() => chooseCurrency('USD')}>USD</button> */}
-
+                                
+                                {/* conditional rendering if rates have been loaded from currency service */}
                                 {!fxdata ? 
                                     <p>API Information unavailable at this moment</p> 
                                     : 
