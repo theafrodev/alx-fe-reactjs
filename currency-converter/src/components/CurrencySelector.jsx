@@ -16,6 +16,12 @@ function CurrencySelector(props) {
     },[]);
 
     async function setRateData(){
+
+        //update secondary currency display
+        if(props.type !== "primary"){
+            setCurrency(currencies.convertedCurrency);
+        }
+
         //get data from currency service
        const data = await fetchRates();
 
@@ -24,7 +30,6 @@ function CurrencySelector(props) {
        } else if (data.result === "success"){
             //set conversion rates to fxdata state
             setFxData(data.conversion_rates);
-            localStorage.setItem("rates", JSON.stringify(data.conversion_rates));
        } else{
          console.log("A request was sent but an unfavorable response was received")
        }
@@ -40,15 +45,11 @@ function CurrencySelector(props) {
 
         //check for type of currency (props) and assign it to the global variable (context)
         if(props.type === "primary"){
-            //Recheck why the first line is here
-            currencies.primaryCurrency = selectedCurrency;
             currencies.setPrimaryCurrency(selectedCurrency);
         } else{
-            currencies.convertedCurrency = selectedCurrency;
             currencies.setConvertedCurrency(selectedCurrency);
+            setCurrency(selectedCurrency);
         }
-
-        console.log(currencies);
 
         //update the currency (local state) with the value of the global variable (context)
         setCurrency(selectedCurrency);
@@ -70,9 +71,9 @@ function CurrencySelector(props) {
 
                             <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                                 <h3>Select Currency</h3>
-
                                 
-                                {/* conditional rendering if rates have been loaded from currency service */}
+                                {/* conditional rendering of available currencies if rates have been loaded from currency service */}
+
                                 {!fxdata ? 
                                     <p>API Information unavailable at this moment</p> 
                                     : 
@@ -83,7 +84,7 @@ function CurrencySelector(props) {
                 </div>
             </div> 
             :
-            <button onClick={toggleDialog} className='bg-white text-black px-4 py-2 rounded-md border'>
+            <button onClick={toggleDialog} className='bg-black text-white py-4 px-8 text-xs rounded-md border'>
                 {currency}
             </button>
         }

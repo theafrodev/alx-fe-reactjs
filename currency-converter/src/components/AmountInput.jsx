@@ -15,18 +15,12 @@ function AmountInput() {
   const setPrimaryAmount = currencies.setPrimaryAmount;
   const setConvertedAmount = currencies.setConvertedAmount;
 
+  //Convert to dollar and convert to selected currency
   async function calculate(){
     const data = await fetchRates();
-    //console.log(data.conversion_rates);
-    console.log(primaryCurrency+primaryAmount);
     let dollarAmount = primaryAmount/data.conversion_rates[primaryCurrency];
-    console.log(dollarAmount+"USD");
     let converted = dollarAmount*data.conversion_rates[convertedCurrency];
     setConvertedAmount(converted);
-    console.log(convertedCurrency+converted);
-    console.log(convertedAmount);
-    //console.log("DollarValue="+dollarRate/primaryAmount);
-    //console.log(dollarValue*data.conversion_rates[convertedCurrency]);
   }
 
   function checkValues(){
@@ -37,23 +31,22 @@ function AmountInput() {
     checkValues();
   });
 
-  // return (
-  //   <input type="text" value={inputValue} onChange={handleInputChange} />
-  // );
-
-
   return (
     <>
         <div>
-            {/* <label htmlFor="amount">From</label> */}
-            <input id="PrimaryAmount" onChange={e => setPrimaryAmount(e.target.value)} type="number" value={primaryAmount}/>
-            <CurrencySelector type="primary"/>
+            <label className='block text-left m-0 pb-2' htmlFor="PrimaryAmount">From</label>
+            <div className='bg-white rounded-lg p-1 pl-4 flex'>
+              <input className='w-full text-sm bg-white text-black focus:outline-none' id="PrimaryAmount" onChange={e => setPrimaryAmount(e.target.value)} type="number" value={primaryAmount}/>
+              <CurrencySelector type="primary"/>
+            </div>
         </div>
 
         <div>
-            {/* <label htmlFor="amount">To</label> */}
-            <input id="ConvertedAmount" type="number" value={convertedAmount} disabled/>
-            <CurrencySelector/>
+            <label className='block text-left m-0 pb-2' htmlFor="ConvertedAmount">To</label>
+            <div className='bg-border rounded-lg p-1 pl-4 flex'>
+              <input className='w-full text-sm bg-border text-white focus:outline-none' id="ConvertedAmount" type="number" value={convertedAmount} disabled/>
+              <CurrencySelector/>
+            </div>
         </div>
     </>
   )

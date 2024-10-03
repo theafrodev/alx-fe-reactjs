@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -32,6 +39,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #202020;
+  background-image: url('assets/bg.svg');
+  background-size: cover;
+  background-position: top center;
 }
 
 h1 {
@@ -69,4 +80,17 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.frost{
+  background: rgba(48, 48, 48, 0.30);
+  backdrop-filter: blur(10px);
 }
