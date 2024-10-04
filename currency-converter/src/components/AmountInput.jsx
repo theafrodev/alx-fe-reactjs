@@ -11,7 +11,7 @@ function AmountInput() {
   const primaryAmount = currencies.primaryAmount;
   const convertedCurrency = currencies.convertedCurrency;
   const convertedAmount = currencies.convertedAmount;
-  const setPrimaryCurrency = currencies.setPrimaryCurrency;
+  //const setPrimaryCurrency = currencies.setPrimaryCurrency;
   const setPrimaryAmount = currencies.setPrimaryAmount;
   const setConvertedAmount = currencies.setConvertedAmount;
 
