@@ -94,3 +94,12 @@ input[type=number]::-webkit-outer-spin-button {
   background: rgba(48, 48, 48, 0.30);
   backdrop-filter: blur(10px);
 }
+
+.frost-alt{
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  scrollbar-color: white rgba(255,255,255,0);
+  scrollbar-gutter: stable both-edges;
+}
+
+

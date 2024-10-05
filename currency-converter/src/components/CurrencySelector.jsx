@@ -20,8 +20,8 @@ function CurrencySelector(props) {
             <button onClick={() => {
                 modal.toggleDialog()
                 modal.setType(props.type)
-                }} className='bg-black text-white py-4 px-8 text-xs rounded-md border'>
-                    
+                }} className='bg-black font-bold text-white py-4 px-8 text-xl rounded-md border'>
+
                 {props.type === "primary" ? currencies.primaryCurrency : currencies.convertedCurrency}
             </button>
         }
