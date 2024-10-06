@@ -22,7 +22,8 @@ function AmountInput() {
     let dollarAmount = primaryAmount/data.conversion_rates[primaryCurrency];
     let converted = dollarAmount*data.conversion_rates[convertedCurrency];
     let rateCalc = (1/data.conversion_rates[primaryCurrency])*data.conversion_rates[convertedCurrency];
-    setConvertedAmount(converted);
+    //set converted amount to converted in 2 decimal places
+    setConvertedAmount(Math.round(converted*100)/100);
     setRate(rateCalc);
   }
 
