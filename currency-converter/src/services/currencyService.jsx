@@ -2,7 +2,7 @@ const CURRENCY_API_KEY = import.meta.env.VITE_CURRENCY_API_KEY;
 
 export const fetchRates = async ()=>{
 
-    console.log('loading');
+    //console.log('loading');
 
     let data;
     let localTime;
@@ -16,17 +16,17 @@ export const fetchRates = async ()=>{
 
         data = JSON.parse(localStorage.getItem("apiResponse"));
         localTime = data.time_last_update_unix;
-        console.log(localTime - currentTime)
+        //console.log(localTime - currentTime)
 
         //check if the next api fetch time has come, if yes, remove the local data and fetch new
         if((localTime - currentTime) >= 0){
-            console.log((localTime - currentTime) +'expired');
+            //console.log((localTime - currentTime) +'expired');
             localStorage.removeItem("apiResponse");
             console.log('fetching data from api');
             const fetchData = await fetch(`https://v6.exchangerate-api.com/v6/${CURRENCY_API_KEY}/latest/USD`).then(res => res.json());
             localStorage.setItem("apiResponse", JSON.stringify(fetchData));
             data = JSON.parse(localStorage.getItem("apiResponse"));
-            console.log(data);
+            //console.log(data);
         } 
 
         return data;
@@ -39,7 +39,7 @@ export const fetchRates = async ()=>{
         const fetchData = await fetch(`https://v6.exchangerate-api.com/v6/${CURRENCY_API_KEY}/latest/USD`).then(res => res.json());
         localStorage.setItem("apiResponse", JSON.stringify(fetchData));
         data = JSON.parse(localStorage.getItem("apiResponse"));
-        console.log(data);
+        //console.log(data);
     }
 
         

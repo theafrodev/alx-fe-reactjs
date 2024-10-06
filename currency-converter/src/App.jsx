@@ -1,9 +1,7 @@
 import './App.css'
 import HomePage from './components/HomePage';
-import Modal from './components/Modal';
 import { CurrencyProvider } from './hooks/currencyContext';
-import { useContext } from 'react';
-import ModalProvider, { ModalContext } from './hooks/ModalContext';
+import ModalProvider from './hooks/ModalContext';
 
 
 function App() {

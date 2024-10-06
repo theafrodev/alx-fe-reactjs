@@ -22,7 +22,7 @@ function HomePage() {
             <AmountInput />
         </div>
 
-        {/* if global variable is open, display modal */}
+        {/* if value of global variable (open from modal context) is true, display modal */}
         {modal.open && <Modal/>}
     </div>
   )
